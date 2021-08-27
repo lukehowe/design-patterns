@@ -21,6 +21,7 @@ public class GuestList {
     public GuestList(String aT)
     {
         this.title = aT;
+        init();
     }
 
     /**
@@ -30,6 +31,19 @@ public class GuestList {
      */
     public boolean add(String person)
     {
+        //if(searchBehavior == null)
+        //{
+        //    init();
+        //}
+        if(searchBehavior.contains(people, person))
+        {
+            return true;
+        }
+        else
+        {
+            getList().add(person);
+            return false;
+        }
         // Calls strategies contains method
         // if already contained, return FALSE
         // otherwise, person is added to this list and TRUE is returned
@@ -42,6 +56,20 @@ public class GuestList {
      */
     public boolean remove(String person)
     {
+        //if(searchBehavior == null)
+        //{
+        //    LinearSearch lSearch = new LinearSearch();
+        //    setSearchBehavior(lSearch);
+        //}
+        if(searchBehavior.contains(people, person))
+        {
+            getList().remove(person);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
         // Calls strategies contains method
         // if already contained, person is removed from this list and TRUE is returned
         // otherwise, return FALSE
@@ -62,7 +90,16 @@ public class GuestList {
      */
     public void setSearchBehavior(SearchBehavior searchBehavior)
     {
-        // initally set to linear search
+        //if(searchBehavior == null)
+        //{
+        //    LinearSearch lSearch = new LinearSearch();
+        //    searchBehavior = lSearch;
+        //}
+        //else
+        //{
+        //    searchBehavior = this.searchBehavior;
+        //}
+        this.searchBehavior = searchBehavior;
     }
 
     public ArrayList<String> getList()
@@ -72,6 +109,7 @@ public class GuestList {
 
     public void init()
     {
-        lSearch = new LinearSearch();
+        LinearSearch lSearch = new LinearSearch();
+        setSearchBehavior(lSearch);
     }
 }
