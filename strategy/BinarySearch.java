@@ -15,7 +15,52 @@ public class BinarySearch implements SearchBehavior {
     public boolean contains(ArrayList<String> data, String item)
     {
         Collections.sort(data);
-        int mid = data.size()/2;
+
+        /*int result = Collections.binarySearch(data, item);
+
+        if(result == -1)
+            return false;
+
+        else
+            return true;
+            */
+
+
+
+
+        int left = 0, right = data.size() - 1;
+        while (left <= right)
+        {
+            Collections.sort(data);
+            int mid = left + (right - left) / 2;
+
+            if(data.get(mid).contains(item))
+                return true;
+
+            if(data.get(mid).compareTo(item) < item.charAt(0))
+                left = mid+1;
+                //right = mid - 1;
+                
+
+            else
+                right = mid -1;
+                //left = mid + 1;
+                
+        }
+        return false;
+        
+
+        
+
+
+
+
+
+
+
+
+
+        /*int mid = data.size()/2;
         if(data.get(mid) == item)
         {
             return true;
@@ -28,6 +73,7 @@ public class BinarySearch implements SearchBehavior {
         {
             return contains(data,item);
         }
+        */
     }
 
 }

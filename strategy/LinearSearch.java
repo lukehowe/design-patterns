@@ -8,19 +8,23 @@ import java.util.ArrayList;
 
 public class LinearSearch implements SearchBehavior {
     
+    //ArrayList<String> data = new ArrayList<String>();
+
     /**
      * Linear contains method
      */
     public boolean contains(ArrayList<String> data, String item)
     {
+        if(data == null)
+            return false;
         for (int i = 0; i < data.size(); i++)
         {
-            String person = data.get(i).toLowerCase();
-            if(person.contains(item.toLowerCase()))
+            if(data.get(i).toLowerCase().contains(item.toLowerCase()))
             {
                 return true;
             }
         }
+
         return false;
     }
 

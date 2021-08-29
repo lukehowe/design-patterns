@@ -22,6 +22,9 @@ public class GuestList {
     {
         this.title = aT;
         init();
+        people = new ArrayList<String>();
+
+        
     }
 
     /**
@@ -37,12 +40,12 @@ public class GuestList {
         //}
         if(searchBehavior.contains(people, person))
         {
-            return true;
+            return false;
         }
         else
         {
-            getList().add(person);
-            return false;
+            people.add(person);
+            return true;
         }
         // Calls strategies contains method
         // if already contained, return FALSE
@@ -63,7 +66,7 @@ public class GuestList {
         //}
         if(searchBehavior.contains(people, person))
         {
-            getList().remove(person);
+            people.remove(person);
             return true;
         }
         else
