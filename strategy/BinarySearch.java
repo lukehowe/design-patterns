@@ -10,35 +10,23 @@ import java.util.Collections;
 public class BinarySearch implements SearchBehavior {
     
     /**
-     * Binary contains method
+     * Binary contains method, helped by www.geeksforgeeks.org (https://www.geeksforgeeks.org/java-program-to-perform-binary-search-on-arraylist/)
      */
     public boolean contains(ArrayList<String> data, String item)
     {
         Collections.sort(data);
-
         int left = 0, right = data.size() - 1;
         while (left <= right)
         {
             Collections.sort(data);
-            
-            
             int mid = left + (right - left) / 2;
-
             if(data.get(mid).contains(item))
                 return true;
                 
-            //if(data.get(mid).compareTo(item) > item.charAt(0))
             if(data.get(mid).compareTo(item) < 0)
-                //left = mid - 1;
                 left = mid + 1;
-                
-
             else
                 right = mid -1;
-                //left = mid + 1;
-        
-        
-            
         }
         return false;
         

@@ -23,8 +23,6 @@ public class GuestList {
         this.title = aT;
         init();
         people = new ArrayList<String>();
-
-        
     }
 
     /**
@@ -34,10 +32,6 @@ public class GuestList {
      */
     public boolean add(String person)
     {
-        //if(searchBehavior == null)
-        //{
-        //    init();
-        //}
         if(searchBehavior.contains(people, person))
         {
             return false;
@@ -59,11 +53,6 @@ public class GuestList {
      */
     public boolean remove(String person)
     {
-        //if(searchBehavior == null)
-        //{
-        //    LinearSearch lSearch = new LinearSearch();
-        //    setSearchBehavior(lSearch);
-        //}
         if(searchBehavior.contains(people, person))
         {
             people.remove(person);
@@ -89,27 +78,25 @@ public class GuestList {
 
     /**
      * set search behavior method
-     * @param searchBehavior 
+     * @param searchBehavior The search behavior that is being used by the guest list
      */
     public void setSearchBehavior(SearchBehavior searchBehavior)
     {
-        //if(searchBehavior == null)
-        //{
-        //    LinearSearch lSearch = new LinearSearch();
-        //    searchBehavior = lSearch;
-        //}
-        //else
-        //{
-        //    searchBehavior = this.searchBehavior;
-        //}
         this.searchBehavior = searchBehavior;
     }
 
+    /**
+     * get list method
+     * @return
+     */
     public ArrayList<String> getList()
     {
         return this.people;
     }
 
+    /**
+     * a method to initially set the search behavior to linear
+     */
     public void init()
     {
         LinearSearch lSearch = new LinearSearch();

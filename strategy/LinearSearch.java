@@ -8,8 +8,6 @@ import java.util.ArrayList;
 
 public class LinearSearch implements SearchBehavior {
     
-    //ArrayList<String> data = new ArrayList<String>();
-
     /**
      * Linear contains method
      */
@@ -24,7 +22,6 @@ public class LinearSearch implements SearchBehavior {
                 return true;
             }
         }
-
         return false;
     }
 
