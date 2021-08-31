@@ -1,6 +1,8 @@
 /**
  * @author Luke Howe
  */
+
+ // Import packages
 package observer;
 
 public class Book {
@@ -16,7 +18,7 @@ public class Book {
      * @param authorFirstName This value holds the first name of the author who wrote the book.
      * @param authorLastName This value holds the last name of the author who wrote the book.
      */
-    Book(String title, String authorFirstName, String authorLastName) {
+    public Book(String title, String authorFirstName, String authorLastName) {
         this.title = title;
         this.authorFirstName = authorFirstName;
         this.authorLastName = authorLastName;
