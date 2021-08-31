@@ -6,7 +6,7 @@
 package observer;
 import java.util.ArrayList;
 
-public class Customer {
+public class Customer implements  Observer {
     
     // Create instance variables
     private Subject subject;
@@ -32,7 +32,7 @@ public class Customer {
     }
 
     public void display() {
-        
+
     }
 
 }

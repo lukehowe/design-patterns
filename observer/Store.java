@@ -6,7 +6,7 @@
 package observer;
 import java.util.Queue;
 
-public class Store {
+public class Store implements Observer {
 
     // Create instance variables
     private Subject subject;
@@ -21,7 +21,7 @@ public class Store {
     public Store(Subject subject, String title) {
         this.subject = subject;
         this.title = title;
-        // bestSellers = new Queue<Book>(); ERROR GIVEN
+        //bestSellers = new Queue<Book>(); 
     }
 
     public void update(Book book) {
