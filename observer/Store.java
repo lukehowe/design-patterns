@@ -29,6 +29,9 @@ public class Store implements Observer {
         bestSellers = new LinkedList<Book>();
     }
 
+    /**
+     * This value updates the Store queue whenever the store is notified/updated that a new bestseller has been added.
+     */
     public void update(Book book) {
         if(bestSellers.size() >= 5) {
             bestSellers.remove();
@@ -36,6 +39,9 @@ public class Store implements Observer {
         bestSellers.add(book);
     }
 
+    /**
+     * This value displays the queue of Store's bestSellers.
+     */
     public void display() {
         System.out.println("Top 5 Best Sellers:");
         for(int i = 0; i < 5; i++) {

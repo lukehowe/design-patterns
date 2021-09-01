@@ -28,13 +28,18 @@ public class Customer implements  Observer {
         this.firstName = firstName;
         this.lastName = lastName;
         wishList = new ArrayList<Book>();
-        //BestSellers.registerObserver(this);
     }
 
+    /**
+     * This value updates/adds the new bestselling book to the Customer's wishList arraylist.
+     */
     public void update(Book book) {
         wishList.add(book);
     }
 
+    /**
+     * This method displays the Customer's arrayList of wishlisted books.
+     */
     public void display() {
         System.out.println("\nWish List:");
         for(int i = 0; i < wishList.size(); i++) {
