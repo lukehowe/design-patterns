@@ -4,8 +4,8 @@
 
  // Import packages
 package observer;
-//import java.util.Queue;
-import java.util.Deque;
+import java.util.Queue;
+//import java.util.Deque;
 import java.util.LinkedList;
 
 public class Store implements Observer {
@@ -15,7 +15,8 @@ public class Store implements Observer {
     // Create instance variables
     private Subject subject;
     private String title;
-    private Deque<Book> bestSellers;
+    //private Deque<Book> bestSellers;
+    private Queue<Book> bestSellers;
     
     /**
      * Store object constructor.
@@ -30,7 +31,7 @@ public class Store implements Observer {
 
     public void update(Book book) {
         if(bestSellers.size() >= 5) {
-            bestSellers.removeFirst();
+            bestSellers.remove();
         }
         bestSellers.add(book);
     }
@@ -39,7 +40,7 @@ public class Store implements Observer {
         System.out.println("Top 5 Best Sellers:");
         for(int i = 0; i < 5; i++) {
             System.out.println(bestSellers.peek());
-            bestSellers.removeFirst();
+            bestSellers.remove();
         }
     }
 }
