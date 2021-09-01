@@ -23,10 +23,12 @@ public class Customer implements  Observer {
      * @param lastName This value holds the last name of the customer.
      */
     public Customer(Subject subject, String firstName, String lastName) {
+        subject.registerObserver(this);
         this.subject = subject;
         this.firstName = firstName;
         this.lastName = lastName;
         wishList = new ArrayList<Book>();
+        //BestSellers.registerObserver(this);
     }
 
     public void update(Book book) {
@@ -34,8 +36,9 @@ public class Customer implements  Observer {
     }
 
     public void display() {
+        System.out.println("\nWish List:");
         for(int i = 0; i < wishList.size(); i++) {
-            System.out.println(i);
+            System.out.println(wishList.get(i).toString());
         }
 
         }
