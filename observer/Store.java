@@ -8,6 +8,8 @@ import java.util.Queue;
 
 public class Store implements Observer {
 
+    Subject BestSellers;
+
     // Create instance variables
     private Subject subject;
     private String title;
@@ -21,11 +23,13 @@ public class Store implements Observer {
     public Store(Subject subject, String title) {
         this.subject = subject;
         this.title = title;
+        //bestSellers.registerObserver(this);
         //bestSellers = new Queue<Book>(); 
+        //Queue<Book> bestSellers = new LinkedList();
     }
 
     public void update(Book book) {
-
+        
     }
 
     public void display() {

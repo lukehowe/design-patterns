@@ -7,6 +7,8 @@ package observer;
 import java.util.ArrayList;
 
 public class Customer implements  Observer {
+
+    Subject BestSellers;
     
     // Create instance variables
     private Subject subject;
@@ -28,11 +30,15 @@ public class Customer implements  Observer {
     }
 
     public void update(Book book) {
-
+        wishList.add(book);
     }
 
     public void display() {
+        for(int i = 0; i < wishList.size(); i++) {
+            System.out.println(i);
+        }
 
-    }
+        }
+    
 
 }
