@@ -10,6 +10,7 @@ public class Hat extends CharacterDecorator {
     // Create constructor
     public Hat(Character character) {
         super(character);
+        customize();
     }
 
     // Customize method

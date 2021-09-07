@@ -10,11 +10,12 @@ public class Eyes extends CharacterDecorator {
     // Create constructor
     public Eyes(Character character) {
         super(character);
+        customize();
     }
 
     // Customize method
     public void customize() {
-        sections.remove(3);
-        sections.add(3, " | o    o |");
+    sections.remove(3);
+    sections.add(3, " | o    o |");
     }
 }

@@ -10,6 +10,7 @@ public class Nose extends CharacterDecorator {
     // Create constructor
     public Nose(Character character) {
         super(character);
+        customize();
     }
 
     // Customize method

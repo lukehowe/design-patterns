@@ -10,6 +10,7 @@ public class Mouth extends CharacterDecorator {
     // Create constructor
     public Mouth(Character character) {
         super(character);
+        customize();
     }
 
     // Customize method
