@@ -6,6 +6,8 @@ public class ContemporaryPlan extends HousePlan {
     
     public ContemporaryPlan() {
         super(5, 40, 3000);
+        setMaterials();
+        setFeatures();
     }
 
     protected void setMaterials() {

@@ -6,6 +6,8 @@ public class TinyHomePlan extends HousePlan {
     
     public TinyHomePlan() {
         super(1, 5, 200);
+        setMaterials();
+        setFeatures();
     }
 
     protected void setMaterials() {
@@ -24,7 +26,6 @@ public class TinyHomePlan extends HousePlan {
 
     public String toString() {
         return "Tiny House\n"+super.toString();
-        
     }
 
 }

@@ -3,15 +3,12 @@ package factory;
  * @author Luke Howe
  */
 
- // Import packages
- import java.util.ArrayList;
-
 public class LogCabinPlan extends HousePlan {
 
     public LogCabinPlan() {
         super(2, 10, 1800);
-        materials = new ArrayList<String>();
-        features = new ArrayList<String>();
+        setMaterials();
+        setFeatures();
     }
 
     protected void setMaterials() {

@@ -58,9 +58,17 @@ public abstract class HousePlan {
         result += "Room: "+numRooms+"\n";
         result += "Windows: "+numWindows+"\n";
 
+        result += "\nMaterials:";
         for(String material : materials) {
-            result += " - " +material+ "\n";
+            result += "\n - " +material+ "";
         }
+        result += "\n";
+
+        result += "\nFeatures:";
+        for(String feature : features) {
+            result += "\n - " +feature+ "";
+        }
+        result += "\n";
         return result;
     }
 }
