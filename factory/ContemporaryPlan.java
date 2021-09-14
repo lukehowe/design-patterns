@@ -5,7 +5,7 @@ package factory;
 public class ContemporaryPlan extends HousePlan {
     
     public ContemporaryPlan() {
-        super();
+        super(5, 40, 3000);
     }
 
     protected void setMaterials() {
@@ -22,6 +22,6 @@ public class ContemporaryPlan extends HousePlan {
     }
     
     public String toString() {
-
+        return "Contemporary Home\n"+super.toString();
     }
 }

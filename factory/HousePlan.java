@@ -18,6 +18,12 @@ public abstract class HousePlan {
     // Create constructor
     public HousePlan(int numRooms, int numWindows, int squareFeet) {
 
+        this.numRooms = numRooms;
+        this.numWindows = numWindows;
+        this.squareFeet = squareFeet;
+        materials = new ArrayList<String>();
+        features = new ArrayList<String>();
+
     }
 
     protected void setMaterials() {
@@ -27,26 +33,34 @@ public abstract class HousePlan {
     }
 
     public ArrayList<String> getMaterials() {
-        return materials;
+        return this.materials;
     }
 
     public ArrayList<String> getFeatures() {
-        return features;
+        return this.features;
     }
 
     public int getNumRooms() {
-        return numRooms;
+        return this.numRooms;
     }
 
     public int getNumWindows() {
-        return numWindows;
+        return this.numWindows;
     }
 
     public int getSquareFeet() {
-        return squareFeet;
+        return this.squareFeet;
     }
 
     public String toString() {
-        return "";
+        String result = "";
+        result += "Square Feet: "+squareFeet+"\n";
+        result += "Room: "+numRooms+"\n";
+        result += "Windows: "+numWindows+"\n";
+
+        for(String material : materials) {
+            result += " - " +material+ "\n";
+        }
+        return result;
     }
 }

@@ -2,10 +2,16 @@ package factory;
 /**
  * @author Luke Howe
  */
+
+ // Import packages
+ import java.util.ArrayList;
+
 public class LogCabinPlan extends HousePlan {
 
     public LogCabinPlan() {
-        
+        super(2, 10, 1800);
+        materials = new ArrayList<String>();
+        features = new ArrayList<String>();
     }
 
     protected void setMaterials() {
@@ -21,6 +27,6 @@ public class LogCabinPlan extends HousePlan {
     }
 
     public String toString() {
-        
+        return "Log Cabin\n"+super.toString();
     }
 }

@@ -5,7 +5,7 @@ package factory;
 public class TinyHomePlan extends HousePlan {
     
     public TinyHomePlan() {
-        super();
+        super(1, 5, 200);
     }
 
     protected void setMaterials() {
@@ -23,7 +23,8 @@ public class TinyHomePlan extends HousePlan {
     }
 
     public String toString() {
-
+        return "Tiny House\n"+super.toString();
+        
     }
 
 }
