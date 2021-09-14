@@ -21,34 +21,32 @@ public abstract class HousePlan {
     }
 
     protected void setMaterials() {
-
     }
 
     protected void setFeatures() {
-
     }
 
     public ArrayList<String> getMaterials() {
-
+        return materials;
     }
 
     public ArrayList<String> getFeatures() {
-
+        return features;
     }
 
     public int getNumRooms() {
-
+        return numRooms;
     }
 
     public int getNumWindows() {
-
+        return numWindows;
     }
 
     public int getSquareFeet() {
-
+        return squareFeet;
     }
-    
-    public String toString() {
 
+    public String toString() {
+        return "";
     }
 }
