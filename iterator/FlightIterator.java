@@ -14,7 +14,7 @@ public class FlightIterator implements Iterator {
     // Create constructor
 
     public FlightIterator(Flight[] flights) {
-
+        
     }
 
     public boolean hasNext() {
@@ -22,7 +22,7 @@ public class FlightIterator implements Iterator {
     }
 
     public Flight next() {
-        
+
     }
 
 }

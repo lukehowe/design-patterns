@@ -15,23 +15,23 @@ public class Flight {
     }
 
     public String getFrom() {
-
+        return this.from;
     }
 
     public String getTo() {
-
+        return this.to;
     }
 
     public int getDuration() {
-
+        return this.duration;
     }
 
     public int getNumTransfers() {
-
+        return this.transfers;
     }
 
     public String toString() {
-        
+        return "test";
     }
 
 }

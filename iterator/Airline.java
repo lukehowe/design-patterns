@@ -14,7 +14,9 @@ public class Airline {
     // Create constructor
 
     public Airline(String title) {
-
+        this.title = title;
+        size = 2;
+        flights = new Flight[size];
     }
 
     public void addFlight(String flightNum, String from, String to, int duration, int transfers) {
@@ -22,7 +24,7 @@ public class Airline {
     }
 
     public String getTitle() {
-
+        return this.title;
     }
 
     private Flight[] growArray(Flight[] flights) {
