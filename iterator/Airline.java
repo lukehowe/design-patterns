@@ -24,11 +24,18 @@ public class Airline {
     public void addFlight(String flightNum, String from, String to, int duration, int transfers) {
         Flight flight = new Flight(flightNum, from, to, duration, transfers);
         
-        if(flights[size] != null)
+
+
+        if(flights[size-1] != null)
             growArray(flights);
         
         else {
-            flights[size] = flight;
+            for(int i = 0; i < flights.length; i++) {
+                if(flights[i] == null) {
+                    flights[i] = flight;
+                    break;
+                }
+            }
         }
         
 
@@ -41,11 +48,15 @@ public class Airline {
     private Flight[] growArray(Flight[] flights) {
         size = size * 2;
         //return flights[size];
-        Flight[] tempFlights = new Flight[size];
+        Flight[] tempFlights = new Flight[size*2];
 
-        tempFlights = flights;
+        for(int i = 0; i <flights.length; i++) {
+            tempFlights[i] = flights[i];
+        }
 
-        return tempFlights;
+        flights = tempFlights;
+        
+        return flights;
         
     }
 
