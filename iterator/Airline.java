@@ -26,8 +26,15 @@ public class Airline {
         
 
 
-        if(flights[size-1] != null)
+        if(flights[size-1] != null) {
             growArray(flights);
+            for(int i = 0; i < flights.length; i++) {
+                if(flights[i] == null) {
+                    flights[i] = flight;
+                    break;
+                }
+            }
+        }
         
         else {
             for(int i = 0; i < flights.length; i++) {
@@ -48,14 +55,14 @@ public class Airline {
     private Flight[] growArray(Flight[] flights) {
         size = size * 2;
         //return flights[size];
-        Flight[] tempFlights = new Flight[size*2];
+        Flight[] tempFlights = new Flight[size];
 
-        for(int i = 0; i <flights.length; i++) {
+        for(int i = 0; i < flights.length; i++) {
             tempFlights[i] = flights[i];
         }
 
-        flights = tempFlights;
-        
+        this.flights = tempFlights;
+
         return flights;
         
     }
