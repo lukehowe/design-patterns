@@ -37,7 +37,8 @@ public class Flight {
     }
 
     public String toString() {
-        return "Flight Number: "+flightNum+"\nFrom: "+from+"\nTo: "+to+"\nDuration: "+duration/60+"hours "+duration%60+" minutes\nDirect Flight or 1 Transfer or X Transfers";
+        return "Flight Number: "+flightNum+"\nFrom: "+from+"\nTo: "+to+"\nDuration: "+duration/60+" hours "+duration%60+" minutes\n"+transfers+" Transfers";
+        //Direct Flight or 1 Transfer or X Transfers";
 
     }
 
