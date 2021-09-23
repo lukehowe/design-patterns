@@ -37,7 +37,16 @@ public class Flight {
     }
 
     public String toString() {
+        
+        if(transfers == 0) {
+            return "Flight Number: "+flightNum+"\nFrom: "+from+"\nTo: "+to+"\nDuration: "+duration/60+" hours "+duration%60+" minutes\nDirect Flight";
+        }
+        else if(transfers == 1) {
+            return "Flight Number: "+flightNum+"\nFrom: "+from+"\nTo: "+to+"\nDuration: "+duration/60+" hours "+duration%60+" minutes\n"+transfers+" Transfer";
+        }
         return "Flight Number: "+flightNum+"\nFrom: "+from+"\nTo: "+to+"\nDuration: "+duration/60+" hours "+duration%60+" minutes\n"+transfers+" Transfers";
+        
+        //return "Flight Number: "+flightNum+"\nFrom: "+from+"\nTo: "+to+"\nDuration: "+duration/60+" hours "+duration%60+" minutes\n"+transfers+" Transfers";
         //Direct Flight or 1 Transfer or X Transfers";
 
     }
