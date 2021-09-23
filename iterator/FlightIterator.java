@@ -1,8 +1,6 @@
 package iterator;
 
-/**
- * @author Luke Howe
- */
+import java.util.Iterator;
 
 public class FlightIterator implements Iterator {
     

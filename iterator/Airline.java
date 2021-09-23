@@ -1,5 +1,7 @@
 package iterator;
 
+import java.util.Iterator;
+
 /**
  * @author Luke Howe
  */

@@ -1,5 +1,7 @@
 package iterator;
 
+import java.util.Iterator;
+
 public class Flight {
     
     // Create instance variables
@@ -11,7 +13,11 @@ public class Flight {
 
     // Create constructor
     public Flight(String flightNum, String from, String to, int duration, int transfers) {
-
+        this.flightNum = flightNum;
+        this.from = from;
+        this.to = to;
+        this.duration = duration;
+        this.transfers = transfers;
     }
 
     public String getFrom() {
@@ -31,7 +37,8 @@ public class Flight {
     }
 
     public String toString() {
-        return "test";
+        return "FlightNumber:"+flightNum+"\nFrom:\nTo:\nDuration:\nDirect Flight or 1 Transfer or X Transfers";
+
     }
 
 }
