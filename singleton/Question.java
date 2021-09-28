@@ -26,7 +26,10 @@ public class Question {
     }
     
     public boolean isCorrect(int userAnswer) {
-
+        if(userAnswer == correctAnswer-1) {
+            return true;
+        }
+        return false;
     }
 
     public String getCorrectAnswer() {
