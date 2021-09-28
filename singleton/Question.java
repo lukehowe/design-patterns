@@ -33,7 +33,18 @@ public class Question {
     }
 
     public String getCorrectAnswer() {
-        
+        if(correctAnswer == 1) {
+            return answers[0];
+        }
+        else if(correctAnswer == 2) {
+            return answers[1];
+        }
+        else if(correctAnswer == 3) {
+            return answers[2];
+        }
+        else {
+            return answers[3];
+        }
     }
 
 }
