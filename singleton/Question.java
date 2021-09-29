@@ -23,7 +23,7 @@ public class Question {
     }
 
     public String toString() {
-        return question+"\n 1. "+answers[0]+"\n 2. "+answers[1]+"\n 3. "+answers[2]+"\n 4. "+answers[3];
+        return question+"\n 1. "+answers[0]+"\n 2. "+answers[1]+"\n 3. "+answers[2]+"\n 4. "+answers[3]+"\n";
     }
     
     public boolean isCorrect(int userAnswer) {
@@ -34,18 +34,7 @@ public class Question {
     }
 
     public String getCorrectAnswer() {
-        if(correctAnswer == 1) {
-            return answers[0];
-        }
-        else if(correctAnswer == 2) {
-            return answers[1];
-        }
-        else if(correctAnswer == 3) {
-            return answers[2];
-        }
-        else {
-            return answers[3];
-        }
+            return answers[correctAnswer];
     }
 
 }

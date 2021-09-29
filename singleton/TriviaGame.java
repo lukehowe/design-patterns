@@ -41,11 +41,14 @@ public class TriviaGame {
             System.out.print("(P)lay or (Q)uit?: ");
             String response = reader.next();
             if(response.toUpperCase().contains("P")) {
+                System.out.println("");
                 playRound();
             }
             else if(response.toUpperCase().contains("Q")) {
+                System.out.println("");
                 System.out.println("You won "+score+" games!\nGoodbye");
                 quitGame = true;
+                System.exit(0);
             }
             else {
                 System.out.println("Error: Input not valid");
@@ -55,11 +58,12 @@ public class TriviaGame {
     }
 
     private boolean playRound() {
-        int r = rand.nextInt(9);
+        int r = rand.nextInt(10);
         System.out.println(questions.get(r).toString());
         System.out.print("Enter Answer: ");
-        int answer = reader.nextInt();
 
+        
+        int answer = reader.nextInt();
         if(answer > 4 || answer < 0) {
             System.out.println("Error. Invalid number.");
             System.exit(0);
@@ -72,6 +76,6 @@ public class TriviaGame {
         else {
             System.out.println("You got it wrong!\nThe correct answer is "+questions.get(r).getCorrectAnswer());
             return false;
-        }
+        }            
     }
 }
