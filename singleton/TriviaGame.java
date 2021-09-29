@@ -38,17 +38,18 @@ public class TriviaGame {
         boolean quitGame = false;
         while(!quitGame) {
             //playRound();
-            System.out.print("(P)lay or (Q)uit?:");
+            System.out.print("(P)lay or (Q)uit?: ");
             String response = reader.next();
-            if(response.toUpperCase() == "P") {
+            if(response.toUpperCase().contains("P")) {
                 playRound();
             }
-            else if(response.toUpperCase() == "Q") {
+            else if(response.toUpperCase().contains("Q")) {
                 System.out.println("You won "+score+" games!\nGoodbye");
                 quitGame = true;
             }
             else {
-                return;
+                System.out.println("Error: Input not valid");
+                play();
             }
         }
     }
@@ -59,12 +60,13 @@ public class TriviaGame {
         System.out.print("Enter Answer: ");
         int answer = reader.nextInt();
 
-        if(answer > 4) {
+        if(answer > 4 || answer < 0) {
             System.out.println("Error. Invalid number.");
             System.exit(0);
         }
         if(questions.get(r).isCorrect(answer)) {
             System.out.println("YAY! You got it right!");
+            score += 1;
             return true;
         }
         else {

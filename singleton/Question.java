@@ -27,7 +27,7 @@ public class Question {
     }
     
     public boolean isCorrect(int userAnswer) {
-        if(userAnswer == correctAnswer) {
+        if(userAnswer-1 == correctAnswer) {
             return true;
         }
         return false;
