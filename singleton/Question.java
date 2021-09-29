@@ -23,11 +23,11 @@ public class Question {
     }
 
     public String toString() {
-        return "Question here\n1. answer 1\n2. answer 2\n3. answer 3\n4. answer 4";
+        return question+"\n 1. "+answers[0]+"\n 2. "+answers[1]+"\n 3. "+answers[2]+"\n 4. "+answers[3];
     }
     
     public boolean isCorrect(int userAnswer) {
-        if(userAnswer == correctAnswer-1) {
+        if(userAnswer == correctAnswer) {
             return true;
         }
         return false;

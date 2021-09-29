@@ -45,7 +45,7 @@ public class TriviaGame {
             }
             else if(response.toUpperCase() == "Q") {
                 System.out.println("You won "+score+" games!\nGoodbye");
-                System.exit(0);
+                quitGame = true;
             }
             else {
                 return;
@@ -54,9 +54,9 @@ public class TriviaGame {
     }
 
     private boolean playRound() {
-        int r = rand.nextInt(10);
-        questions.get(r).toString();
-        System.out.println("Enter Answer: ");
+        int r = rand.nextInt(9);
+        System.out.println(questions.get(r).toString());
+        System.out.print("Enter Answer: ");
         int answer = reader.nextInt();
 
         if(answer > 4) {
