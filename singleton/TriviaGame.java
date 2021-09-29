@@ -1,5 +1,9 @@
 package singleton;
 
+/**
+ * @author Luke Howe
+ */
+
 // Import packages
 import java.util.Random;
 import java.util.Scanner;
@@ -9,6 +13,9 @@ import java.util.ArrayList;
  * @author Luke Howe
  */
 
+ /**
+  * Class for TriviaGame.java
+  */
 public class TriviaGame {
 
     // Create instance variables
@@ -19,6 +26,9 @@ public class TriviaGame {
     private ArrayList<Question> questions;
 
     // Create constructor
+    /**
+     * This is the private constructor for TriviaGame.
+     */
     private TriviaGame() {
         questions = DataLoader.getTriviaQuestions();
         rand = new Random();
@@ -27,6 +37,10 @@ public class TriviaGame {
         playRound();
     }
 
+    /**
+     * This is the getInstance method for the Singleton class TriviaGame.
+     * @return This method returns the instance of TriviaGame that originally existed.
+     */
     public static TriviaGame getInstance() {
         if(triviaGame == null) {
             triviaGame = new TriviaGame();
@@ -34,10 +48,12 @@ public class TriviaGame {
         return triviaGame;
     }
 
+    /**
+     * This is the play method for TriviaGame(). It runs the game and is called by the driver.
+     */
     public void play() {
         boolean quitGame = false;
         while(!quitGame) {
-            //playRound();
             System.out.print("(P)lay or (Q)uit?: ");
             String response = reader.next();
             if(response.toUpperCase().contains("P")) {
@@ -57,6 +73,10 @@ public class TriviaGame {
         }
     }
 
+    /**
+     * This is the playRound method. It pulls a question from the bank and takes the user's answer and returns true/false depending on if it is correct.
+     * @return This method returns true/false depending on if it is a correct.
+     */
     private boolean playRound() {
         int r = rand.nextInt(10);
         System.out.println(questions.get(r).toString());
