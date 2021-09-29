@@ -14,10 +14,11 @@ public class Question {
     // Create constructor
     public Question(String question, String ans1, String ans2, String ans3, String ans4, int correctAnswer) {
         this.question = question;
-        ans1 = answers[0];
-        ans2 = answers[1];
-        ans3 = answers[2];
-        ans4 = answers[3];
+        answers = new String[4];
+        answers[0] = ans1;
+        answers[1] = ans2;
+        answers[2] = ans3;
+        answers[3] = ans4;
         this.correctAnswer = correctAnswer;
     }
 

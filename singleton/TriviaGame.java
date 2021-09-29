@@ -21,8 +21,8 @@ public class TriviaGame {
     // Create constructor
     private TriviaGame() {
         questions = DataLoader.getTriviaQuestions();
-        Random rand = new Random();
-        Scanner reader = new Scanner(System.in);
+        rand = new Random();
+        reader = new Scanner(System.in);
         System.out.println("Welcome to the Trivia Game!");
         playRound();
     }
@@ -54,9 +54,22 @@ public class TriviaGame {
     }
 
     private boolean playRound() {
-        int r = rand.nextInt(11);
+        int r = rand.nextInt(10);
         questions.get(r).toString();
         System.out.println("Enter Answer: ");
-        String response = reader.next();
+        int answer = reader.nextInt();
+
+        if(answer > 4) {
+            System.out.println("Error. Invalid number.");
+            System.exit(0);
+        }
+        if(questions.get(r).isCorrect(answer)) {
+            System.out.println("YAY! You got it right!");
+            return true;
+        }
+        else {
+            System.out.println("You got it wrong!\nThe correct answer is "+questions.get(r).getCorrectAnswer());
+            return false;
+        }
     }
 }
