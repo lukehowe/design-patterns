@@ -8,11 +8,11 @@ import java.util.Random;
 public class Easy implements State {
     
     // Create instances
-    private ArithemeticGame Arithmetic;
+    private ArithemeticGame game;
 
     // Create constructor
     public Easy(ArithemeticGame game) {
-        game = this.Arithmetic;
+        game = this.game;
     }
 
     public int getNum() {
@@ -34,11 +34,11 @@ public class Easy implements State {
     }
 
     public void levelUp() {
-        // TODO
+        game.setState(game.getMediumState());
         System.out.println("You've been advanced to medium mode.");
     }
 
     public void levelDown() {
-        //TODO
+        System.out.println("You seem to be struggling, you may want to study.");
     }
 }
