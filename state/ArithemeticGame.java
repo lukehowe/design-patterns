@@ -16,16 +16,39 @@ public class ArithemeticGame {
 
     // Create constructor
     public ArithemeticGame() {
-        //this.easyState = easyState;
-        easyState = this.state;
-        mediumState = this.state;
-        hardState = this.state;
-        Scanner keyboard = new Scanner(System.in);
+        easyState = new Easy(this);
+        mediumState = new Medium(this);
+        hardState = new Hard(this);
+        state = easyState;
+        this.score = 0;
+        Scanner keyboard;
 
     }
 
     public void pressQuestionButton() {
-        //TODO
+        int firstNumber = state.getNum();
+        int secNumber = state.getNum();
+        String opCode = state.getOperation();
+        System.out.println(firstNumber+" "+opCode+" "+secNumber+" = ?");
+        Scanner keyboard = new Scanner(System.in);
+        int userInput = keyboard.nextInt();
+        int answer = calculate(firstNumber, opCode, secNumber);
+        if(userInput == answer) {
+            System.out.println("Correct");
+            score++;
+        }
+        if(userInput != answer) {
+            System.out.println("Incorrect");
+            score--;
+        }
+        if(score >= 3) {
+            this.state.levelUp();
+            score = 0;
+        }
+        if(score <= -3) {
+            state.levelDown();
+            score = 0;
+        }
     }
 
     public void setState(State state) {
@@ -33,17 +56,27 @@ public class ArithemeticGame {
     }
 
     public State getEasyState() {
-        // TODO
-        return state;
+        return easyState;
     }
 
     public State getMediumState() {
-        // TODO
-        return state;
+        return mediumState;
     }
 
     public State getHardState() {
-        // TODO
-        return state;
+        return hardState;
+    }
+
+    public int calculate(int firstNum, String operation, int secNum) {
+        if(operation == "+") {
+            return firstNum + secNum;
+        }
+        else if(operation == "-") {
+            return firstNum - secNum;
+        }
+        else if(operation == "*") {
+            return firstNum * secNum;
+        }
+        return firstNum / secNum;
     }
 }

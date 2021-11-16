@@ -12,7 +12,7 @@ public class Easy implements State {
 
     // Create constructor
     public Easy(ArithemeticGame game) {
-        game = this.game;
+        this.game = game;
     }
 
     public int getNum() {
@@ -34,8 +34,9 @@ public class Easy implements State {
     }
 
     public void levelUp() {
-        game.setState(game.getMediumState());
+        //game.setState(game.getMediumState());
         System.out.println("You've been advanced to medium mode.");
+        game.setState(game.getMediumState());
     }
 
     public void levelDown() {

@@ -12,7 +12,7 @@ public class Hard implements State {
 
     // Create constructor
     public Hard(ArithemeticGame game) {
-        game = this.game;
+        this.game = game;
     }
 
     public int getNum() {
@@ -45,7 +45,7 @@ public class Hard implements State {
     }
 
     public void levelDown() {
-        game.setState(game.getMediumState());
         System.out.println("You are struggling, let's go to medium mode.");
+        game.setState(game.getMediumState());
     }
 }
