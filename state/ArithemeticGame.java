@@ -1,7 +1,7 @@
 package state;
 
 // Import packages
-
+import java.util.Scanner;
 /**
  * @author Luke Howe
  */
@@ -16,7 +16,12 @@ public class ArithemeticGame {
 
     // Create constructor
     public ArithemeticGame() {
-        //TODO
+        //this.easyState = easyState;
+        easyState = this.state;
+        mediumState = this.state;
+        hardState = this.state;
+        Scanner keyboard = new Scanner(System.in);
+
     }
 
     public void pressQuestionButton() {
@@ -24,7 +29,7 @@ public class ArithemeticGame {
     }
 
     public void setState(State state) {
-        //TODO
+        this.state = state;
     }
 
     public State getEasyState() {
