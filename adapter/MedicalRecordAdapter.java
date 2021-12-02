@@ -36,7 +36,7 @@ public class MedicalRecordAdapter implements MedicalRecord {
     }
 
     public Gender getGender() {
-        if(record.getGender().contains("male")) {
+        if(record.getGender().equalsIgnoreCase("male")) {
             return Gender.MALE;
         }
         return Gender.FEMALE;
@@ -64,12 +64,20 @@ public class MedicalRecordAdapter implements MedicalRecord {
                 retWell = false;
             }
             String description = new String();
-            splitHistory[2] = description;
+            description = splitHistory[2];
             Visit visit = new Visit(date, retWell, description);
             retVisits.add(visit);
         }
 
         return retVisits;
+    }
+
+    public String visitHistoryToString(ArrayList<Visit> visits) {
+        String arrangedHistory = new String();
+        for(int i = 0; i > visits.size(); i++) {
+            arrangedHistory += visits.get(i).getDate() + ": " +visits.get(i).isWell() + ", " + visits.get(i).getDescription();
+        }
+        return arrangedHistory;
     }
 
     public String toString() {
