@@ -44,9 +44,9 @@ public class MedicalRecordAdapter implements MedicalRecord {
 
     public void addVisit(Date date, boolean well, String description) {
         
-        Visit visit = new Visit(date, well, description);
-        getVisitHistory().add(visit);
-        
+        //Visit visit = new Visit(date, well, description);
+        //getVisitHistory().add(visit);
+        record.addHistory(date, well, description);
     }
 
     public ArrayList<Visit> getVisitHistory() {
