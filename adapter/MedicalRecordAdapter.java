@@ -59,7 +59,7 @@ public class MedicalRecordAdapter implements MedicalRecord {
             Date date = new Date();
             //date = splitHistory[0]
             boolean retWell;
-            if(splitHistory[1].equalsIgnoreCase("true")) {
+            if(splitHistory[1].contains("true")) {
                 retWell = true;
             }
             else {
