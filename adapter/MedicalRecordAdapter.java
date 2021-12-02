@@ -43,13 +43,15 @@ public class MedicalRecordAdapter implements MedicalRecord {
     }
 
     public void addVisit(Date date, boolean well, String description) {
+        
         Visit visit = new Visit(date, well, description);
-        this.getVisitHistory().add(visit);
-        //getVisitHistory().add(visit);
+        getVisitHistory().add(visit);
+        
     }
 
     public ArrayList<Visit> getVisitHistory() {
 
+        
         ArrayList<Visit> retVisits = new ArrayList<Visit>();
 
         for(int i = 0 ; i < record.getHistory().size(); i++) {
@@ -68,20 +70,21 @@ public class MedicalRecordAdapter implements MedicalRecord {
             Visit visit = new Visit(date, retWell, description);
             retVisits.add(visit);
         }
-
         return retVisits;
+        
     }
 
-    public String visitHistoryToString(ArrayList<Visit> visits) {
-        String arrangedHistory = new String();
-        for(int i = 0; i > visits.size(); i++) {
-            arrangedHistory += visits.get(i).getDate() + ": " +visits.get(i).isWell() + ", " + visits.get(i).getDescription();
+    public String visitToString() {
+        String str = new String();
+        for(int i = 0; i < getVisitHistory().size(); i++) {
+            str += getVisitHistory().get(i).toString()+"\n";
         }
-        return arrangedHistory;
+        return str;
     }
 
     public String toString() {
-        return "***** "+getFirstName()+" "+getLastName()+" *****\nBirthday: "+getBirthday()+"\nGender: "+getGender()+"\nMedical Visit History: "+getVisitHistory()+"\n";
+
+        return "***** "+getFirstName()+" "+getLastName()+" *****\nBirthday: "+getBirthday()+"\nGender: "+getGender()+"\nMedical Visit History:\n"+visitToString()+"\n";
     }
 
 }
