@@ -60,22 +60,16 @@ public class MedicalRecordAdapter implements MedicalRecord {
     }
 
     public ArrayList<Visit> getVisitHistory() {
-
-        
         ArrayList<Visit> retVisits = new ArrayList<Visit>();
-
         for(int i = 0 ; i < record.getHistory().size(); i++) {
             String[] splitHistory = record.getHistory().get(i).split("\n");
-
             String[] splitDate = splitHistory[0].split(" ");
             String[] splitCommaDay = splitDate[2].split(",");
             String[] splitCommaMonth = splitDate[3].split(",");
-
             int day = Integer.parseInt(splitCommaDay[0]);
             int month = Integer.parseInt(splitCommaMonth[0]);
             int year = Integer.parseInt(splitDate[4]);
             Date date = makeDate(year, month, day);
-            
             boolean retWell;
             if(splitHistory[1].contains("true")) {
                 retWell = true;
@@ -101,7 +95,6 @@ public class MedicalRecordAdapter implements MedicalRecord {
     }
 
     public String toString() {
-
         return "***** "+getFirstName()+" "+getLastName()+" *****\nBirthday: "+getBirthday()+"\nGender: "+getGender()+"\nMedical Visit History:\n"+visitToString()+"\n";
     }
 
