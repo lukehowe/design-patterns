@@ -2,8 +2,13 @@ package adapter;
 
 // Import packages
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.logging.SimpleFormatter;
+
+import javax.swing.text.DateFormatter;
+
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.text.SimpleDateFormat;
 /**
  * @author Luke Howe
@@ -49,6 +54,11 @@ public class MedicalRecordAdapter implements MedicalRecord {
         record.addHistory(date, well, description);
     }
 
+    private Date makeDate(int year, int month, int day) {
+        Calendar myCalendar = new GregorianCalendar(year, month - 1, day);
+        return myCalendar.getTime();
+    }
+
     public ArrayList<Visit> getVisitHistory() {
 
         
@@ -56,8 +66,16 @@ public class MedicalRecordAdapter implements MedicalRecord {
 
         for(int i = 0 ; i < record.getHistory().size(); i++) {
             String[] splitHistory = record.getHistory().get(i).split("\n");
-            Date date = new Date();
-            //date = splitHistory[0]
+
+            String[] splitDate = splitHistory[0].split(" ");
+            String[] splitCommaDay = splitDate[2].split(",");
+            String[] splitCommaMonth = splitDate[3].split(",");
+
+            int day = Integer.parseInt(splitCommaDay[0]);
+            int month = Integer.parseInt(splitCommaMonth[0]);
+            int year = Integer.parseInt(splitDate[4]);
+            Date date = makeDate(year, month, day);
+            
             boolean retWell;
             if(splitHistory[1].contains("true")) {
                 retWell = true;
